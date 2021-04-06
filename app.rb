@@ -7,7 +7,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    'Hello World, I am testing branches!'
   end
 
   run! if app_file == $0
