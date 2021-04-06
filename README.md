@@ -61,3 +61,14 @@ so i can choose who hires my space
 ## Database Setup
 
 ## Web App Setup
+
+These are the gems that we used.   
+
+```
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'rspec'
+gem 'capybara'
+```
