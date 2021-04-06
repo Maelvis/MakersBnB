@@ -3,7 +3,8 @@ We would like a web application that allows users to list spaces they have avail
 
 # MakersBnB User Stories
 
-```As a user,
+```
+As a user,
 I want to be able to sign up for MakersBnB
 So that i can access services of the site
 
