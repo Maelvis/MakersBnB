@@ -1,5 +1,8 @@
 # MakersBnB Team Earth
-We would like a web application that allows users to list spaces they have available, and to hire spaces for the night.
+
+This is a web application that allows users to list spaces they have available, and to hire spaces for the night.
+
+An online marketplace for booking and renting homestays for holiday rentals and tourism activities. The platform is accessable via the web and does not own any of the listed sites (stay at your own risk)
 
 # MakersBnB User Stories
 
@@ -52,3 +55,9 @@ As a host,
 i want to allow users to make new requests to book unless i have already accepted another users booking
 so i can choose who hires my space
 ```
+
+# Setup
+
+## Database Setup
+
+## Web App Setup
