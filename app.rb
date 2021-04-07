@@ -1,10 +1,10 @@
 require 'sinatra/base'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 
 class MakersBnb < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
+  #configure :development do
+    #register Sinatra::Reloader
+  #end
 
   get '/sign-up' do
     erb :'/users/sign_up'
