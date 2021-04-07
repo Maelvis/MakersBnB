@@ -1,25 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="log-in.css" rel="stylesheet">
-    <title>Log-in</title>
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
+	<link href="log-in.css" rel="stylesheet">
+	<title></title>
 </head>
 <body>
-<header>
-    <p>Logo placeholderer</p>
-   <nav>
-      <a>About</a> | <a>Login</a>
-    </nav>
-</header>
-  <h2>Log in to MakersBnB</h2>
-  <form action="/sign_up"
-        method="post">
-    <label for="email">Email Address <input name="email"
-           type="text"></label> <label for="password">Password <input name="password"
-           type="text"></label> <input type="submit" value="Log In">
-  </form>
+  <section>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li>
+            <a href="%C2%A3"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
+          </li>
+        </ul>
+        <ul class="pull-right">
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li style="list-style: none">|</li>
+          <li>
+            <a href="#">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="hero">
+      <div class="form">
+        <h2>Log in to MakersBnB</h2><br>
+        <form action="/sign_up"
+              method="post">
+          <label for="email">Email Address <input name="email" type="text"></label><br>
+          <label for="password">Password <input name="password" type="text"></label><br>
+          <input type="submit"value="Log in">
+        </form>
+      </div>
+  </section>
 </body>
 </html>
