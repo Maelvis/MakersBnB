@@ -9,22 +9,23 @@ class Space
     @name = name
     @description = description
     @price = price
-    @host = #User.id
+    @host = host #User.id
   end
 
   def self.create_space(name:, description:, price:, host:)
-    result = connection.exec("INSERT INTO # (name, description, price, host) VALUES('#{name}', '#{description}', '#{price}') RETURNING id, name, description, price ")
+    result = DatabaseConnection.query("INSERT INTO #{DatabaseConnection.dbname} (name, description, price, host) VALUES('#{name}', '#{description}', '#{price}') RETURNING id, name, description, price ")
     Space.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], host: result[0]['host'])
   end
 
   def self.view_my_spaces(host:)
-    result = connection.exec("SELECT * FROM # WHERE HOST = '#{host}';")
+    result = DatabaseConnection.query("SELECT * FROM #{DatabaseConnection.dbname} WHERE HOST = '#{host}';")
     result.map do |space| space
       Space.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], host: result[0]['host'])
     end
+  end
 
   def self.view_all_spaces()
-    result = connection.exec("SELECT * FROM #;")
+    result = DatabaseConnection.query("SELECT * FROM #{DatabaseConnection.dbname};")
     result.map do |space| space
       Space.new(id: result[0]['id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'], host: result[0]['host'])
     end
