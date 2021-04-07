@@ -1,0 +1,1 @@
+CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(60), price INTEGER, description VARCHAR(100), host_id integer REFERENCES users ON DELETE CASCADE);
