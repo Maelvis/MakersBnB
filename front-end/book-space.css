@@ -37,5 +37,8 @@ img {
     margin: 5px
 }
 .listingsdiv {
-    padding: 10px;
+    padding: 10px
+}
+.dates {
+    flex-wrap: wrap-reverse;
 }
