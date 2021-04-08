@@ -1,9 +1,44 @@
-<ul>
-  <% @spaces.each do |space| %>
-    <li>
-      <%= space.name %>
-      <%= space.description %>
-      <%= space.price %>
-    </li>
-  <% end %>
-</ul>
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
+	<link href="spaces.css" rel="stylesheet">
+	<title></title>
+</head>
+<body>
+  <section>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li>
+            <a href="%C2%A3"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
+          </li>
+        </ul>
+        <ul class="pull-right">
+          <li>
+            <a href="#">Spaces</a>
+          </li>
+          <li style="list-style: none">|</li>
+          <li><a href="#">Requests</a></li>
+          <li style="list-style: none">|</li>
+          <li>
+            <a href="/front-end/log-in.html">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <h2>The spaces you have listed:</h2>
+  </section>
+
+  <section class="listings">
+    <ul>
+      <% @spaces.map do |space| %>
+          <h4><%= space.name %> - £<%= space.price %></h4>
+          <p class="bio"><%= space.description %></p>
+      <% end %>
+    </ul>
+  </section>
