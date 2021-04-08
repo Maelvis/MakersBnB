@@ -1,0 +1,9 @@
+<ul>
+  <% @spaces.each do |space| %>
+    <li>
+      <%= space.name %>
+      <%= space.description %>
+      <%= space.price %>
+    </li>
+  <% end %>
+</ul>
