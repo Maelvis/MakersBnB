@@ -14,7 +14,6 @@ class MakersBnb < Sinatra::Base
     register Sinatra::Reloader
   end
 
-
   get '/' do
     erb :index
   end
@@ -53,7 +52,7 @@ class MakersBnb < Sinatra::Base
 
   post '/list-space' do
     Space.create_space(name: params[:name], description: params[:description], price: params[:price], host_id: session[:user_id])
-    redirect '/list-space'
+    redirect '/all-spaces'
   end
 
   get '/list-space' do
@@ -61,8 +60,8 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/my-spaces' do
-    p @user = User.find(session[:user_id])
-    @spaces = Space.view_my_spaces(host_id: params[:user_id])
+    p session[:user_id].to_i
+    @spaces = Space.view_my_spaces(host_id: session[:user_id].to_i)
     erb :'/spaces/my_spaces'
   end
 
