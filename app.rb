@@ -23,9 +23,14 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/sign-up' do
-    user = User.create(email: params[:email], password: params[:password])
-    session[:user_id] = user.id
-    redirect '/list-space'
+    if User.registered?(email: params[:email])
+      flash[:notice] = "Credentials have already been used by another user."
+      redirect '/sign-up'
+    else
+      user = User.create(email: params[:email], password: params[:password])
+      session[:user_id] = user.id
+      redirect '/list-space'
+    end
   end
 
   get '/log-in' do
@@ -60,8 +65,8 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/my-spaces' do
-    p session[:user_id].to_i
-    @spaces = Space.view_my_spaces(host_id: session[:user_id].to_i)
+    p session[:user_id]
+    @spaces = Space.view_my_spaces(host_id: session[:user_id])
     erb :'/spaces/my_spaces'
   end
 
