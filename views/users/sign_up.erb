@@ -1,7 +1,7 @@
 
-
+<h4><%= flash[:notice] %></h4>
 <form action="/sign-up" method="post">
-  <input type="email" name="email" />
-  <input type="password" name="password" />
+  <input type="email" name="email" required="" />
+  <input type="password" name="password" required="" />
   <input type="submit" value="Submit" />
 </form>
