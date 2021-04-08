@@ -1,5 +1,5 @@
 <ul>
-  <% @spaces.each do |space| %>
+  <% @spaces.map do |space| %>
     <li>
       <%= space.name %>
       <%= space.description %>
