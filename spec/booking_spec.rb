@@ -2,9 +2,9 @@ require 'booking'
 require 'database_connection'
 require 'space'
 
-describe '.request' do
+describe '.create' do
 
-    it 'creates a new booking request' do
+    it 'creates a new booking' do
         guest = DatabaseConnection.query("INSERT INTO users (email, password) values ('Bob', 123) returning id;")
         host = DatabaseConnection.query("INSERT INTO users (email, password) values ('Dylan', 124) returning id;")
         space = DatabaseConnection.query("INSERT INTO spaces (name, description, price, host_id) VALUES ('Cotswolds', 'A cottage in the Cotswolds', 120, #{host[0]['id']}) returning id" )
