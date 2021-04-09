@@ -1,76 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
-    <link rel="stylesheet" href="homepage.css">
-  </head>
-  <body>
+<head>
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
+	<link href="homepage.css" rel="stylesheet">
+	<title></title>
+</head>
+<body>
+  <section>
     <div class="nav">
       <div class="container">
         <ul class="pull-left">
-          <li><a href="£"><img src=https:/boostandco.com/wp-content/uploads/Makers-1.png alt=""></a></li>
+          <li>
+            <a href="%C2%A3"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
+          </li>
         </ul>
         <ul class="pull-right">
-          <li><a href="#">About</a></li> | <li><a href="#">Log In</a></li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li style="list-style: none">|</li>
+          <li>
+            <a href="/front-end/log-in.html">Log In</a>
+          </li>
         </ul>
       </div>
     </div>
-<div class="signup-form">
-    <form action="/examples/actions/confirmation.php" method="post">
-		<h2>Sign up to Makers BnB</h2>
-		<hr>
-        <div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<span class="fa fa-user"></span>
-					</span>                    
-				</div>
-				<input type="text" class="form-control" name="username" placeholder="Username" required="required">
-			</div>
-        </div>
-        <div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<i class="fa fa-paper-plane"></i>
-					</span>                    
-				</div>
-				<input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
-			</div>
-        </div>
-		<div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<i class="fa fa-lock"></i>
-					</span>                    
-				</div>
-				<input type="text" class="form-control" name="password" placeholder="Password" required="required">
-			</div>
-        </div>
-		<div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<i class="fa fa-lock"></i>
-						<i class="fa fa-check"></i>
-					</span>                    
-				</div>
-				<input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
-			</div>
-        </div>
-        <div class="form-group">
-			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
-		</div>
-		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
-        </div>
-    </form>
-	<div class="text-center">Already have an account? <a href="#">Login here</a></div>
-</div>
+  </section>
+  <section class="hero">
+    <h2>Feel at home, anywhere</h2>
+      <p>Whether if it's a weekend break with the kids</p>
+      <p>Or a romantic getaway for two</p><br><br><br>
+      <div class="form">
+        <h2>Sign up to MakersBnB</h2><br>
+        <form action="/sign_up"
+              method="post">
+          <label for="email">Email Address <input name="email" type="text"></label><br>
+          <label for="password">Password <input name="password" type="text"></label><br>
+          <label for="confirm_password">Confirm Password <input name="confirm_password" type="text"></label><br>
+          <input type="submit"value="Sign Up">
+        </form>
+      </div>
+  </section>
 </body>
-</html>
-  </body>
-</html>
+</html> 

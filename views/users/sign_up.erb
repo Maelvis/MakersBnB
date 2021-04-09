@@ -1,19 +1,25 @@
-<body>
-<h1><h1>Paradise On Earth!</h1>
-<h2>Sign up to MakersBnB</h2>
-<form action="/sign_up" method="post">
-  <label for="email">
-    Email Address
-    <input type="text" name="email">
-  </label>
-  <label for="password">
-    Password
-    <input type="text" name="password">
-  </label>
-  <label for="confirm_password">
-    Confirm Password
-    <input type="text" name="confirm_password">
-  </label>
-  <input type="submit" value="Sign Up">
-</form></h1>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
+    <link href="<%= url('/homepage.css') %>" rel="stylesheet" type="text/css" />
+    <title></title>
+  </head>
+  
+  <body>
+    <h4><%= flash[:notice] %></h4>
+
+    <section class="hero">
+      <div class="form">
+        <h2>Sign up to MakersBnB</h2><br>
+        <form action="/sign-up" method="post">
+          <label for="email">Email Address<input type="email" name="email" required="" /></label><br>
+          <label for="password">Password<input type="password" name="password" required="" /></label><br>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
+

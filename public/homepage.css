@@ -11,7 +11,7 @@ img {
 .pull-right {
     margin-top: 15px;
 }
-
+  
 .nav a {
     color: #5a5a5a;
     font-size: 11px;
@@ -19,26 +19,14 @@ img {
     padding: 14px 10px;
     text-transform: uppercase;
 }
-
+    
 .nav li {
       display: inline;
 }
-.hero {
-    text-align: center;
+.hero, p{
+  text-align: center;
+  margin-top: 0;
 }
-.container div {
-    padding-top: 10px;
-}
-.bio {
-    font-style: italic;
-}
-.listings {
-    border: groove black 1px;
-    margin: 5px
-}
-.listingsdiv {
-    padding: 10px
-}
-.dates {
-    flex-wrap: wrap-reverse;
+form {
+  text-align: center;
 }

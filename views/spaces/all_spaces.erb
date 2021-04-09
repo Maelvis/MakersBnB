@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
+	<link href="spaces.css" rel="stylesheet">
+	<title></title>
+</head>
+<body>
+  <section>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li>
+            <a href="/"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
+          </li>
+        </ul>
+        <ul class="pull-right">
+          <li>
+            <a href="/all-spaces">Spaces</a>
+          </li>
+          <li style="list-style: none">|</li>
+          <li><a href="#">Requests</a></li>
+          <li style="list-style: none">|</li>
+          <li>
+            <form action="/sign-out" method="post">
+              <input type="submit" value="Sign out" />
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="hero">
+    <h2>Book a Space</h2>
+    <p>A beachfront property or a cabin in the forest?</p>
+    <p>Whatever you want, you will find it here.</p>
+    <button><a href="/list-space">List a Space</a></button><br><br><br>
+    <div class="dates">
+      <label for="from">Arrival:</label>
+      <input type="date" placeholder="dd-mm-yyyy" name="start_date">
+      <label for="to">Departure:</label>
+      <input type="date" placeholder="dd-mm-yyyy" name="leave_date">
+        <select id="selection" name="space">
+          <% @spaces.map do |space| %>
+            <option value="ed"><%= space.name %></option>
+          <% end %>
+        </select>
+        <button>Submit</button>
+      <br><br><br>
+    </div>
+  </section>
+  <section class="listings">
+  <ul>
+    <% @spaces.map do |space| %>
+        <h4><%= space.name %> - £<%= space.price %></h4>
+        <p class="bio"><%= space.description %></p>
+    <% end %>
+  </ul>
+  <section>
+</body>
+</html>

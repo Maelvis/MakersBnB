@@ -1,23 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a Space</title>
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
+	<link href="book-space.css" rel="stylesheet">
+	<title></title>
 </head>
 <body>
-    <p>Logo placeholderer</p>
-    <nav>
-      <a>Spaces</a> | <a>Requests</a> | <a>Sign Out</a>
-    </nav>
-  </header>
-  <h2>Book a Space</h2>
-  <form action="/sign_up"
-        method="post">
-    <label for="email">Email Address <input name="email"
-           type="text"></label> <label for="password">Password <input name="password"
-           type="text"></label> <input type="submit" value="Log In">
-  </form>
+  <section>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li>
+            <a href="%C2%A3"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
+          </li>
+        </ul>
+        <ul class="pull-right">
+          <li>
+            <a href="#">Spaces</a>
+          </li>
+          <li style="list-style: none">|</li>
+          <li><a href="#">Requests</a></li>
+          <li style="list-style: none">|</li>
+          <li>
+            <a href="/front-end/log-in.html">Sign Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="hero">
+    <h2>Book a Space</h2>
+    <p>A beachfront property or a cabin in the forest?</p>
+    <p>Whatever you want, you'll find it here.</p>
+    <button><a href="/front-end/list-space.html">List a Space</a></button><br><br><br>
+    <div class="dates">
+      <label for="from">Available from:</label>
+      <input type="date" id="from" name="from">
+      <label for="to">Available to:</label>
+      <input type="date" id="to" name="to"> 
+        <select id="selection" name="selection">
+          <option value="ed">Select your dream space</option>
+          <option value="ed">Westmoreland Castle, Edinburgh</option>
+          <option value="dev">132 Forest Road, Devon</option>
+          <option value="shack">Shack in the Woods (are you sure?!)</option>
+          <option value="ches">House Upon The Hills, Chesire</option>
+          <option value="ldn">London Townhouse, Mayfair</option>
+        </select>
+        <button>Submit</button>
+      <br><br><br>
+    </div>
+  </section>
+  <section class="listings">
+    <div class="listingsdiv">
+      <div>
+        <h4>Westmoreland Castle, Edinburgh - £223pn</h4>
+        <p class="bio">Overlooking hills of barley and rye, this 300 year old property is said to of..</p>
+      </div>
+      <div>
+        <h4>132 Forest Road, Devon - £89pn</h4>
+        <p class="bio">A popular choice amongst guests who seek solitude and serenity, this listing was voted 'Cabin of the Year' by Cabin Magazine Weekly.</p>
+      </div>
+      <div>
+        <h4>Shack in the Woods, somewhere off the M4 near Newbury - £0.74pn </h4>
+        <p class="bio">We'd highly recommend avoiding this place, there's no running water and the smell of oil fills the nostrils, but hey - it's your business.</p>
+      </div>
+      <div>
+        <h4>House Upon The Hills, Chesire - £143pn</h4>
+        <p class="bio">Famously owned by the late Orson Wells, it is said that he would use this cottage as a way to clear his mind and write many-a screenplay, now a reclusive getaway de...</p>
+      </div>
+      <div>
+        <h4>London Townhouse, Mayfair - £210pn</h4>
+        <p class="bio">You know those houses that always show up in Time Out London with the BMW parked out front under a cherry blossom tree, this is one of those houses.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+
+  </section>
 </body>
-</html>
+</html> 

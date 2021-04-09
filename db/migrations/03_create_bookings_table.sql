@@ -1,0 +1,1 @@
+CREATE TABLE bookings(id SERIAL PRIMARY KEY, space_id integer REFERENCES spaces ON DELETE CASCADE, host_id integer REFERENCES users ON DELETE CASCADE, guest_id integer REFERENCES users ON DELETE CASCADE, start_date DATE, leave_date DATE, confirmed BOOLEAN);

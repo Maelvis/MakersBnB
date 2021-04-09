@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
+	<link href="listspace.css" rel="stylesheet">
+	<title></title>
+</head>
+  <body>
+    <section>
+      <div class="nav">
+        <div class="container">
+          <ul class="pull-left">
+            <li>
+              <a href="/"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
+            </li>
+          </ul>
+          <ul class="pull-right">
+            <li>
+              <a href="/all-spaces">Spaces</a>
+            </li>
+            <li style="list-style: none">|</li>
+            <li><a href="#">Requests</a></li>
+            <li style="list-style: none">|</li>
+            <li>
+            <form action="/sign-out" method="post">
+              <input type="submit" value="Sign out" />
+            </form>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <section class="hero">
+    <h2>List a Space</h2>
+    <p>Want to rent your home to someone?</p>
+    <p>Fill in your property details and let a stranger use your toilet.</p>
+  </section>
+  <div class="containerform">
+    <form action="/list-space" method="post" id="newspace">
+      <label for="fname">Name</label>
+      <input type="text" name="name" placeholder="Name" id="fname" />
+
+      <label for="price">Price per night</label>
+      <input type="text" name="price" placeholder="£" id="lname" />
+      
+      <label for="subject">Description</label>
+      <textarea form="newspace" id="subject" name="description" placeholder="Describe your property..." style="height:200px"></textarea>
+      
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  </body>
+</html>

@@ -11,7 +11,7 @@ img {
 .pull-right {
     margin-top: 15px;
 }
-
+  
 .nav a {
     color: #5a5a5a;
     font-size: 11px;
@@ -19,7 +19,7 @@ img {
     padding: 14px 10px;
     text-transform: uppercase;
 }
-
+    
 .nav li {
       display: inline;
 }

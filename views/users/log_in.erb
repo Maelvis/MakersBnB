@@ -3,7 +3,7 @@
 <head>
 	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
-	<link href="log-in.css" rel="stylesheet">
+	<link href="login.css" rel="stylesheet">
 	<title></title>
 </head>
 <body>
@@ -12,7 +12,7 @@
       <div class="container">
         <ul class="pull-left">
           <li>
-            <a href="%C2%A3"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
+            <a href="/"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
           </li>
         </ul>
         <ul class="pull-right">
@@ -27,16 +27,18 @@
       </div>
     </div>
   </section>
+  <h4>
+    <%= flash[:notice] %>
+  </h4>
   <section class="hero">
       <div class="form">
         <h2>Log in to MakersBnB</h2><br>
-        <form action="/sign_up"
-              method="post">
-          <label for="email">Email Address <input name="email" type="text"></label><br>
-          <label for="password">Password <input name="password" type="text"></label><br>
+        <form action="/log-in" method="post">
+          <label for="email">Email Address <input type="email" name="email" /></label><br>
+          <label for="password">Password <input type="password" name="password" /></label><br>
           <input type="submit"value="Log in">
         </form>
       </div>
   </section>
 </body>
-</html> 
+</html>

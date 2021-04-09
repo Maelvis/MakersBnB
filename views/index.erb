@@ -3,7 +3,7 @@
 <head>
 	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 	<link href="https://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" rel="stylesheet">
-	<link href="log-in.css" rel="stylesheet">
+	<link href="<%= url('/homepage.css') %>" rel="stylesheet" type="text/css" />
 	<title></title>
 </head>
 <body>
@@ -12,7 +12,7 @@
       <div class="container">
         <ul class="pull-left">
           <li>
-            <a href="%C2%A3"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
+            <a href="/"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
           </li>
         </ul>
         <ul class="pull-right">
@@ -21,22 +21,20 @@
           </li>
           <li style="list-style: none">|</li>
           <li>
-            <a href="#">Log In</a>
+            <a href='/log-in'> Log In</a>
+          </li>
+          <li style="list-style: none">|</li>
+          <li>
+            <a href='/sign-up'> Sign Up</a>
           </li>
         </ul>
       </div>
     </div>
   </section>
-  <section class="hero">
-      <div class="form">
-        <h2>Log in to MakersBnB</h2><br>
-        <form action="/sign_up"
-              method="post">
-          <label for="email">Email Address <input name="email" type="text"></label><br>
-          <label for="password">Password <input name="password" type="text"></label><br>
-          <input type="submit"value="Log in">
-        </form>
-      </div>
-  </section>
-</body>
-</html> 
+    <section class="hero">
+        <h2>Feel at home, anywhere</h2>
+        <p>Whether if it's a weekend break with the kids</p>
+        <p>Or a romantic getaway for two</p><br><br><br>
+    </section>
+    </body>
+</html>
