@@ -19,7 +19,7 @@ class Booking
     end
 
     def self.confirm(booking_id:)
-        result = DatabaseConnection.query("UPDATE bookings SET confirmed = true WHERE id = #{booking_id};")
+        result = DatabaseConnection.query("UPDATE bookings SET confirmed = true WHERE id = #{booking_id} RETURNING confirmed;")
         return true
     end
 end
