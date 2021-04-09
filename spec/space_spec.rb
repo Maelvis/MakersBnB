@@ -9,7 +9,7 @@ describe '.view_all_spaces' do
 		DatabaseConnection.query("INSERT INTO spaces (name, description, price, host_id) values ('First space', 'Great space', '100', #{user[0]['id']});")
 		DatabaseConnection.query("INSERT INTO spaces (name, description, price, host_id) values ('Second space', 'Great space', '90', #{user[0]['id']});")
 
-		p spaces = Space.view_all_spaces
+		spaces = Space.view_all_spaces
 
 		expect(spaces.length).to eq 2
 		expect(spaces.first.name).to eq 'First space'
