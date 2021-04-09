@@ -37,17 +37,19 @@
     <p>Whatever you want, you will find it here.</p>
     <button><a href="/list-space">List a Space</a></button><br><br><br>
     <div class="dates">
-      <label for="from">Arrival:</label>
-      <input type="date" placeholder="dd-mm-yyyy" name="start_date">
-      <label for="to">Departure:</label>
-      <input type="date" placeholder="dd-mm-yyyy" name="leave_date">
-        <select id="selection" name="space">
-          <% @spaces.map do |space| %>
-            <option value="ed"><%= space.name %></option>
-          <% end %>
-        </select>
-        <button>Submit</button>
-      <br><br><br>
+      <form action="/booking" method="post">
+        <label for="from">Arrival:</label>
+        <input type="date" placeholder="dd-mm-yyyy" name="start_date">
+        <label for="to">Departure:</label>
+        <input type="date" placeholder="dd-mm-yyyy" name="leave_date">
+          <select id="selection" name="space">
+            <% @spaces.map do |space| %>
+              <option value="ed"><%= space.name %></option>
+            <% end %>
+          </select>
+        <input type="submit" value="Submit Request">
+        <br><br><br>
+      </form>
     </div>
   </section>
   <section class="listings">
