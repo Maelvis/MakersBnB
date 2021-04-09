@@ -1,12 +1,28 @@
+require 'database_connection'
+require './lib/database_connection_setup'
+require_relative 'web_helpers'
 feature 'View spaces' do
   scenario 'User can view all spaces' do
-    user = DatabaseConnection.query("INSERT INTO users (email, password) values ('test@test.com', 123) returning id;")
-
-		DatabaseConnection.query("INSERT INTO spaces (name, description, price, host_id) values ('First space', 'Great space', 100, #{user[0]['id']});")
-
-		spaces = Space.view_all_spaces
-    
+    sign_up
+    list_space
+    list_space_2
     visit('/all-spaces')
-    expect(page).to have_content "Nothing to view"
+    expect(page).to have_content 'Test Space'
+    expect(page).to have_content 'Test 2 Space'
   end
+  
+  scenario 'User can list space' do
+    sign_up
+    list_space
+    expect(current_path).to eq '/my-spaces'
+  end
+
+  scenario 'User can see his spaces' do
+    sign_up
+    list_space
+    visit('/my-spaces')
+    expect(page).to have_content 'Test Space'
+  end
+
+
 end
