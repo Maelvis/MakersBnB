@@ -37,6 +37,46 @@ describe '.view_my_spaces' do
     end
 end
 
+describe '.view_my_spaces' do
+
+    it "returns a particular user's spaces" do
+        user1 = DatabaseConnection.query("INSERT INTO users (email, password) values ('Bob', 123) returning id;")
+        user2 = DatabaseConnection.query("INSERT INTO users (email, password) values ('Dylan', 124) returning id;")
+
+        Space.create_space(name: 'Cotswolds', description: 'A cottage in the Cotswolds', price: 120, host_id: user1[0]['id'] )
+        Space.create_space(name: 'Edinburgh', description: 'A farmhouse in Edinburgh', price: 120, host_id: user1[0]['id'] )
+        Space.create_space(name: 'Blackpool', description: 'A beach hut in Blackpool', price: 120, host_id: user2[0]['id'] )
+
+        spaces = Space.view_my_spaces(host_id: user1[0]['id'])
+        expect(spaces.length).to eq 2
+        expect(spaces.first.name).to eq 'Cotswolds'
+		expect(spaces[1].name).to eq 'Edinburgh'
+    end
+end
+describe '.view_booking_requests' do
+
+    it "returns a particular user's booked spaces" do
+        user1 = DatabaseConnection.query("INSERT INTO users (email, password) values ('Bob', 123) returning id;")
+        user2 = DatabaseConnection.query("INSERT INTO users (email, password) values ('Dylan', 124) returning id;")
+
+        Space.create_space(name: 'Cotswolds', description: 'A cottage in the Cotswolds', price: 120, host_id: user1[0]['id'] )
+        Space.create_space(name: 'Edinburgh', description: 'A farmhouse in Edinburgh', price: 120, host_id: user1[0]['id'] )
+        blackpool = Space.create_space(name: 'Blackpool', description: 'A beach hut in Blackpool', price: 120, host_id: user2[0]['id'] )
+
+		Booking.create(space_id: blackpool.id, guest_id: user1[0]['id'], host_id: user2[0]['id'],  start_date: '04/03/21', leave_date: '06/03/21' )
+		DatabaseConnection.query("UPDATE bookings SET confirmed = FALSE WHERE host_id = #{user2[0]['id']};" )
+
+        request = Space.view_booking_requests(host_id: user2[0]['id'])
+
+        expect(request.first.name).to eq 'Blackpool'
+		expect(request.length).to eq 1
+		expect(request.first.host_id).to eq user2[0]['id']
+
+		
+    end
+end
+
+
 describe '.create_space' do
 
     it 'creates a new space' do
