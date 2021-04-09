@@ -79,7 +79,20 @@ class MakersBnb < Sinatra::Base
     redirect '/'
   end
 
+  get '/my-requested-spaces' do
+    p @spaces = Space.view_booking_requests(host_id: session[:user_id])
+    erb :'/spaces/my_requested_spaces'
+  end
 
+  post '/confirm' do
+    if params[:approve] != nil
+      p params[:name]
+      p space_id = DatabaseConnection.query("SELECT id FROM spaces WHERE name = '#{params[:name]}'")[0]['id']
+      p booking_id = DatabaseConnection.query("SELECT id FROM bookings WHERE space_id = '#{space_id}'")[0]['id']
+      Booking.confirm(booking_id: booking_id)
+      redirect '/'
+    end
+  end
 
   post '/sign-out' do
     session.clear
