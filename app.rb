@@ -86,9 +86,8 @@ class MakersBnb < Sinatra::Base
 
   post '/confirm' do
     if params[:approve] != nil
-      p params[:name]
-      p space_id = DatabaseConnection.query("SELECT id FROM spaces WHERE name = '#{params[:name]}'")[0]['id']
-      p booking_id = DatabaseConnection.query("SELECT id FROM bookings WHERE space_id = '#{space_id}'")[0]['id']
+      space_id = DatabaseConnection.query("SELECT id FROM spaces WHERE name = '#{params[:name]}'")[0]['id']
+      booking_id = DatabaseConnection.query("SELECT id FROM bookings WHERE space_id = '#{space_id}'")[0]['id']
       Booking.confirm(booking_id: booking_id)
       redirect '/'
     end
