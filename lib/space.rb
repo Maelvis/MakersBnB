@@ -2,7 +2,7 @@ require 'pg'
 require_relative 'database_connection'
 
 class Space
-  attr_reader :name, :description, :price, :host_id
+  attr_reader :name, :description, :price, :host_id, :id
 
   def initialize(id:, name:, description:, price:, host_id:)
     @id = id
@@ -19,6 +19,20 @@ class Space
 
   def self.view_my_spaces(host_id:)
     result = DatabaseConnection.query("SELECT * FROM spaces WHERE host_id = '#{host_id}';")
+    result.map do |space| space
+      Space.new(
+        id: space['id'], 
+        name: space['name'], 
+        description: space['description'], 
+        price: space['price'], 
+        host_id: space['host_id'])
+    end
+  end
+
+  def self.view_booking_requests(host_id:)
+    result = DatabaseConnection.query("
+      SELECT * FROM spaces WHERE
+        id = (SELECT space_id FROM bookings WHERE host_id = '#{host_id}' AND confirmed = FALSE);")
     result.map do |space| space
       Space.new(
         id: space['id'], 
