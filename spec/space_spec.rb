@@ -70,9 +70,7 @@ describe '.view_booking_requests' do
 
         expect(request.first.name).to eq 'Blackpool'
 		expect(request.length).to eq 1
-		expect(request.first.host_id).to eq user2[0]['id']
-
-		
+		expect(request.first.host_id).to eq user2[0]['id']		
     end
 end
 
