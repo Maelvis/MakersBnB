@@ -59,16 +59,22 @@ so i can choose who hires my space
 # Setup
 
 ## Database Setup
-
-## Web App Setup
-
-These are the gems that we used.   
+```
+There are three tables in our database: users, spaces and bookings.
+- The user table has columns id (primary key), email and password.
+- The spaces table has columns id (primary key), name, price, description and host id (foreign key).
+- The bookings table has columns id (primary key), space id (foreign key), host id (foreign key), guest id (foreign key),
+  start date, leave date and confirmed (a boolean value describing status of booking confirmation).
 
 ```
-source 'https://rubygems.org'
-
-gem 'sinatra'
-gem 'sinatra-contrib'
-gem 'rspec'
-gem 'capybara'
+## Gemfile 
+Includes the following gems
+```
+sinatra
+sinatra-contrib
+rspec
+capybara
+pg
+bcrypt
+sinatra-flash
 ```
