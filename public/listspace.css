@@ -71,3 +71,19 @@ img {
     background-color: #f2f2f2;
     padding: 20px;
   }
+
+  .signoutbutton {
+    display: inline;
+    margin-left: -5x;
+    text-decoration: none;
+}
+.signoutbutton input { 
+    text-transform: uppercase;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #5a5a5a;
+    border: 0px;
+    background-color: white;
+  }
