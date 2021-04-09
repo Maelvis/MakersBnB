@@ -62,11 +62,14 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/list-space' do
+    flash[:notice] = 'You need to be logged in to list a space.' unless session[:user_id]
     redirect '/' unless session[:user_id]
     erb :'/spaces/list_spaces'
   end
 
   get '/my-spaces' do
+    flash[:notice] = 'You need to be logged in.' unless session[:user_id]
+    redirect '/' unless session[:user_id]
     @spaces = Space.view_my_spaces(host_id: session[:user_id])
     erb :'/spaces/my_spaces'
   end
@@ -80,6 +83,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/my-requested-spaces' do
+    flash[:notice] = 'You need to be logged in.' unless session[:user_id]
     p @spaces = Space.view_booking_requests(host_id: session[:user_id])
     erb :'/spaces/my_requested_spaces'
   end
