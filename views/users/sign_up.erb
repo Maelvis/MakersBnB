@@ -6,10 +6,27 @@
     <link href="<%= url('/homepage.css') %>" rel="stylesheet" type="text/css" />
     <title></title>
   </head>
-  
+    <section>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li>
+            <a href="/"><img alt="" src="https:/boostandco.com/wp-content/uploads/Makers-1.png"></a>
+          </li>
+        </ul>
+        <ul class="pull-right">
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li style="list-style: none">|</li>
+          <li>
+            <a href="/log-in">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
   <body>
-    
-  <h4><%= flash[:notice] %></h4>
     <section class="hero">
       <div class="form">
         <h2>Sign up to MakersBnB</h2><br>
