@@ -3,6 +3,7 @@ require 'sinatra/flash'
 require 'sinatra/reloader'
 require './lib/space'
 require './lib/user'
+require './lib/booking'
 require './lib/database_connection_setup.rb'
 require './lib/database_connection.rb'
 
@@ -61,13 +62,22 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/list-space' do
+    redirect '/' unless session[:user_id]
     erb :'/spaces/list_spaces'
   end
 
   get '/my-spaces' do
-    p session[:user_id]
     @spaces = Space.view_my_spaces(host_id: session[:user_id])
     erb :'/spaces/my_spaces'
+  end
+
+
+  post '/booking' do
+    p space_id = DatabaseConnection.query("SELECT id FROM spaces WHERE name = '#{params[:name]}'")
+    p space_id.id
+    host_id = DatabaseConnection.query("SELECT host_id FROM spaces WHERE name = '#{params[:name]}'")
+    Booking.create(space_id: space_id, guest_id: session[:user_id], host_id: host_id, start_date: params[:start_date], leave_date: params[:leave_date])
+    redirect '/'
   end
 
   post '/sign-out' do
