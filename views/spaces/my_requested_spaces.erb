@@ -33,7 +33,7 @@
   </section>
 
   <section class="hero">
-    <h2>The spaces you have listed:</h2>
+    <h2>Your spaces that people have requested:</h2>
   </section>
 
   <section class="listings">
@@ -41,6 +41,11 @@
       <% @spaces.map do |space| %>
           <h4><%= space.name %> - £<%= space.price %></h4>
           <p class="bio"><%= space.description %></p>
+          <form action="/confirm" method="post">
+            <input type="hidden" name="name" value=<%= space.name %>/>
+            <input type="submit" name="approve" value="approve">
+            <input type="submit" name="decline" value="decline">
+          </form
       <% end %>
     </ul>
   </section>
