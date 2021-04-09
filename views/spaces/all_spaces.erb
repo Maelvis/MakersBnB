@@ -44,7 +44,7 @@
         <input type="date" placeholder="dd-mm-yyyy" name="leave_date">
           <select id="selection" name="space">
             <% @spaces.map do |space| %>
-              <option value="ed"><%= space.name %></option>
+              <option><%= space.name %></option>
             <% end %>
           </select>
         <input type="submit" value="Submit Request">

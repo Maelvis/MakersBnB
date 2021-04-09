@@ -73,12 +73,13 @@ class MakersBnb < Sinatra::Base
 
 
   post '/booking' do
-    p space_id = DatabaseConnection.query("SELECT id FROM spaces WHERE name = '#{params[:name]}'")
-    p space_id.id
-    host_id = DatabaseConnection.query("SELECT host_id FROM spaces WHERE name = '#{params[:name]}'")
+    space_id = DatabaseConnection.query("SELECT id FROM spaces WHERE name = '#{params[:space]}'")[0]['id']
+    host_id = DatabaseConnection.query("SELECT host_id FROM spaces WHERE name = '#{params[:space]}'")[0]['host_id']
     Booking.create(space_id: space_id, guest_id: session[:user_id], host_id: host_id, start_date: params[:start_date], leave_date: params[:leave_date])
     redirect '/'
   end
+
+
 
   post '/sign-out' do
     session.clear
